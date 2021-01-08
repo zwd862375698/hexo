@@ -1,7 +1,6 @@
 ---
 title: antdesign-vue结合sortablejs实现两个table相互拖拽排序
 ---
-## antdesign-vue结合sortablejs实现两个table相互拖拽排序
 # 实现效果
 本来想在网上看看有没有基于antdesign做的，然后发现是真的少啊！废话不多说，先上图：
 
