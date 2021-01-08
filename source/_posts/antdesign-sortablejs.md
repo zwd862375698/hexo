@@ -4,7 +4,7 @@ title: antdesign-vue结合sortablejs实现两个table相互拖拽排序
 # 实现效果
 本来想在网上看看有没有基于antdesign做的，然后发现是真的少啊！废话不多说，先上图：
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210107161521792.gif#pic_center)
+![实现效果](https://img-blog.csdnimg.cn/20210107161521792.gif#pic_center)
 
 
 
@@ -12,7 +12,7 @@ title: antdesign-vue结合sortablejs实现两个table相互拖拽排序
 ## sortablejs介绍
 首先先来认识一下这个插件: [sortablejs](http://www.sortablejs.com/index.html)
 大家可以去细读一下它的api文档：
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210107162025864.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3p3ZDg2MjM3NTY5OA==,size_16,color_FFFFFF,t_70)
+![sortable API（部分）](https://img-blog.csdnimg.cn/20210107162025864.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3p3ZDg2MjM3NTY5OA==,size_16,color_FFFFFF,t_70)
 这边我就着重介绍一下我用到的api。
 1.`group`可以传入对象，参数值为`name`,`pull`,`put`,
  **name**:如果是要两个列表下进行拖动的话，name的值必须为一样；
@@ -112,9 +112,9 @@ methods:{
    }
 ```
 关于`handle`所取的**class**，因为我们是要对*antdesign*表格的每一行进行拖拽，所以要选取到他每一行的**class**。
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210107164241136.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3p3ZDg2MjM3NTY5OA==,size_16,color_FFFFFF,t_70)至此两个**table**之间就可以实现拖拽效果，但仅仅只是**拖拽效果**。
+![](https://img-blog.csdnimg.cn/20210107164241136.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3p3ZDg2MjM3NTY5OA==,size_16,color_FFFFFF,t_70)至此两个**table**之间就可以实现拖拽效果，但仅仅只是**拖拽效果**。
 因为这样拖拽之后，两边的数据源并没有发生变化，而且明明已经拖拽过来之后，另一边的表格的展示页会存在错误：
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210107165016844.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3p3ZDg2MjM3NTY5OA==,size_16,color_FFFFFF,t_70)
+![](https://img-blog.csdnimg.cn/20210107165016844.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3p3ZDg2MjM3NTY5OA==,size_16,color_FFFFFF,t_70)
 排序是我右边表格特有的，但是这边的表格是不需要这个排序的，而且如果拖拽成功的话为什么还会显示**暂无数据**呢，最后左边表头的`CheckBox`也无法选中。所以到此为止只是有拖拽效果而已。
 2.在拖拽动作之后，把左右两边的数据源重新赋值，这里有两种实现思路：
   * 每一次拖拽之后都去请求后台数据，拿到新的数据源之后重新赋值给表格，
