@@ -93,9 +93,10 @@ title: 张伟叠的简历
 
 * 熟练掌握html5、css3、js、es6等前端开发技术。
 * 熟练使用Vue全家桶（vue+vue*router+vuex）、vue*cli、axios、element*ui、jquery等。
+* 熟练搭建vue前端开发环境。
 * 熟练掌握组件插件的编写，熟悉面向对象式编程。
 * 熟练使用响应式布局，移动端rem适配，flex布局等。
-* 熟练使用sass css预处理器，熟悉webpack自动化构建工具的使用。
+* 熟练使用sass、less css预处理器，熟悉webpack自动化构建工具的使用。
 * 具有前后端分离、未分离项目搭建和开发经验。
 * 熟练使用SVN , Git版本管理工具。
 * 熟悉Nginx的搭建，了解node、react。
